@@ -3,14 +3,20 @@
 @tailwind utilities;
 
 @layer base {
-  body {
-    @apply bg-background text-zinc-300 antialiased font-sans overflow-x-hidden;
-    cursor: none !important;
+  html, body {
+    @apply bg-background text-zinc-300 antialiased font-sans;
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+    scroll-behavior: smooth;
   }
 }
 
-a, button, input, textarea, [role="button"] {
-  cursor: none !important;
+/* Only hide cursor on Desktop where CustomCursor is active */
+@media (min-width: 768px) {
+  body, a, button, input, textarea, [role="button"] {
+    cursor: none !important;
+  }
 }
 
 html {

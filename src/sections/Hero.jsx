@@ -34,7 +34,7 @@ const WordSlider = ({ words }) => {
   }, [index, words]);
 
   return (
-    <span className={`absolute left-0 top-0 whitespace-nowrap ${fade}`}>
+    <span className={`relative inline-block ${fade}`}>
       {words[index]}
     </span>
   );
@@ -44,7 +44,7 @@ export default function Hero() {
   const words = ['Charles', 'Lebeco', 'Donor'];
 
   return (
-    <SectionWrapper id="home" className="!pt-32 md:!pt-40">
+    <SectionWrapper id="home" className="!pt-32 md:!pt-40 overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-8 relative z-10 w-full">
         {/* Left Side: Introduction */}
         <div className="flex-1 w-full lg:max-w-[50%] relative z-10 text-center lg:text-left">

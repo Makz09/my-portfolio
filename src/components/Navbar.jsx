@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 
-import { Menu, X } from "lucide-react";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 export default function Navbar({ onHomeClick }) {
   const [scrolled, setScrolled] = useState(false);
@@ -30,9 +30,9 @@ export default function Navbar({ onHomeClick }) {
 
   return (
     <>
-      <nav className={`fixed top-0 w-full z-[60] transition-all duration-300 px-6 md:px-8 py-4 md:py-5 flex items-center ${scrolled || isMenuOpen ? 'bg-background/95 backdrop-blur-md border-b border-white/5 shadow-lg' : 'bg-transparent'}`}>
+      <nav className={`fixed top-0 w-full z-[80] transition-all duration-300 px-6 md:px-8 py-4 md:py-5 flex items-center ${scrolled || isMenuOpen ? 'bg-background/95 backdrop-blur-md border-b border-white/5 shadow-lg' : 'bg-transparent'}`}>
         <div className="max-w-7xl mx-auto flex justify-between items-center w-full">
-          <Link to="home" smooth spy onClick={handleLinkClick} className="cursor-pointer z-[70]">
+          <Link to="home" smooth spy onClick={handleLinkClick} className="cursor-pointer z-[90]">
             <img src="/cld_logo.png" alt="My Logo" className="h-7 md:h-10 object-contain hover:scale-105 transition-transform" />
           </Link>
 
@@ -62,24 +62,28 @@ export default function Navbar({ onHomeClick }) {
 
             {/* Mobile Toggle */}
             <button 
-              className="lg:hidden p-2 text-white hover:text-primary transition-colors z-[70]"
+              className="lg:hidden p-2 text-white hover:text-primary transition-all relative z-[90] flex items-center justify-center"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle Menu"
             >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMenuOpen ? (
+                <FaTimes className="w-6 h-6 text-white" />
+              ) : (
+                <FaBars className="w-6 h-6 text-white" />
+              )}
             </button>
           </div>
         </div>
       </nav>
 
       {/* Mobile Menu Overlay */}
-      <div className={`fixed inset-0 z-50 lg:hidden transition-all duration-500 ${isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
+      <div className={`fixed inset-0 z-[70] lg:hidden transition-all duration-500 ${isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
         <div className="absolute inset-0 bg-background/98 backdrop-blur-2xl" />
         
         <div className="relative h-full flex flex-col items-center justify-center p-8">
           <ul className="flex flex-col items-center gap-8 text-center">
             {navLinks.map((link, idx) => (
-              <li key={link.to} className={`transition-all duration-500 delay-[${idx * 50}ms] ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+              <li key={link.to} style={{ transitionDelay: `${idx * 50}ms` }} className={`transition-all duration-500 ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
                 <Link
                   to={link.to}
                   offset={-80}
