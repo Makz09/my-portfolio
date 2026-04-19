@@ -14,7 +14,7 @@ export default function Trajectory() {
           <p className="text-zinc-400 text-lg">A timeline of execution and strategic roles.</p>
         </div>
         
-        <div className="max-w-4xl mx-auto py-10 relative">
+        <div className="max-w-6xl mx-auto py-10 relative">
           {experience.map((item, idx) => (
             <TimelineItem 
               key={idx} 
@@ -32,7 +32,7 @@ export default function Trajectory() {
           <p className="text-zinc-400 text-lg leading-relaxed">The structural foundation of knowledge. A progression from foundational concepts to specialized technical execution.</p>
         </div>
         
-        <div className="max-w-4xl mx-auto py-10 relative">
+        <div className="max-w-6xl mx-auto py-10 relative">
           {education.map((item, idx) => (
             <TimelineItem 
               key={idx} 

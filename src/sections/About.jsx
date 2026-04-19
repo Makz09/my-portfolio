@@ -7,7 +7,8 @@ export default function About() {
 
   return (
     <SectionWrapper id="about">
-      <div className="bg-surface border border-border rounded-3xl p-8 md:p-14 shadow-2xl relative overflow-hidden group">
+      <div className="bg-white/[0.02] backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-14 shadow-2xl relative overflow-hidden group">
+        <div className="absolute bottom-0 left-1/2 w-[40rem] h-[40rem] bg-[#ff2a2a]/0 rounded-full blur-[120px] pointer-events-none -translate-x-1/2 translate-y-1/2 group-hover:bg-[#ff2a2a]/15 transition-all duration-700 z-0"></div>
         <div className="grid md:grid-cols-12 gap-12 relative z-10">
           
           <div className="md:col-span-5">
@@ -19,7 +20,7 @@ export default function About() {
             
             <div className="flex flex-col gap-3">
               {about.skills.map((skill, idx) => (
-                <div key={idx} className="bg-[#1a1a1c] border border-border text-[11px] md:text-xs text-zinc-400 font-bold px-5 py-3 rounded-full w-max max-w-full overflow-hidden text-ellipsis whitespace-nowrap tracking-wide hover:scale-[1.02] hover:translate-x-3 hover:border-primary/70 hover:bg-primary/10 hover:text-white hover:shadow-[0_5px_15px_rgba(229,9,20,0.25)] transition-all duration-300 ease-out cursor-pointer">
+                <div key={idx} className="bg-white/[0.03] backdrop-blur-md border border-white/10 text-[11px] md:text-xs text-zinc-400 font-bold px-5 py-3 rounded-full w-max max-w-full overflow-hidden text-ellipsis whitespace-nowrap tracking-wide hover:scale-[1.02] hover:translate-x-3 hover:border-[#ff2a2a]/70 hover:bg-[#ff2a2a]/20 hover:text-white hover:shadow-[0_5px_15px_rgba(255,42,42,0.4)] transition-all duration-300 ease-out cursor-default">
                   {skill}
                 </div>
               ))}

@@ -17,7 +17,7 @@ export default function SkillCard({ title, subtitle, items = [], layout = "grid"
   const Icon = iconMap[title] || Box;
 
   return (
-    <div className={`bg-[#0d0d0f] border border-zinc-800 rounded-2xl p-6 md:p-8 relative overflow-hidden group hover:border-[#ff2a2a]/80 hover:shadow-[0_0_30px_rgba(255,42,42,0.3)] hover:animate-wobble transition-colors duration-300 ${className}`}>
+    <div className={`bg-white/[0.02] backdrop-blur-xl border border-white/10 rounded-2xl p-6 md:p-8 relative overflow-hidden group hover:border-[#ff2a2a]/50 hover:bg-white/[0.04] hover:shadow-[0_0_30px_rgba(255,42,42,0.2)] hover:animate-wobble transition-all duration-300 ${className}`}>
       
       {/* Corner ambient background glow */}
       <div className="absolute -top-16 -right-16 w-48 h-48 bg-[#ff2a2a]/5 rounded-full blur-3xl group-hover:bg-[#ff2a2a]/20 transition-all duration-500 pointer-events-none"></div>
@@ -35,7 +35,7 @@ export default function SkillCard({ title, subtitle, items = [], layout = "grid"
           {layout === "flex" ? (
             <div className="flex flex-wrap gap-2.5">
               {items.map((item, idx) => (
-                 <span key={idx} className="bg-[#161618] border border-zinc-800 text-xs text-zinc-300 font-medium px-4 py-2 rounded-full whitespace-nowrap hover:bg-[#ff2a2a]/10 hover:border-[#ff2a2a] hover:text-[#ff2a2a] hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(255,42,42,0.5)] cursor-default transition-all duration-300">
+                 <span key={idx} className="bg-white/[0.03] backdrop-blur-md border border-white/10 text-xs text-zinc-300 font-medium px-4 py-2 rounded-full whitespace-nowrap hover:bg-[#ff2a2a]/20 hover:border-[#ff2a2a]/80 hover:text-white hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(255,42,42,0.4)] cursor-default transition-all duration-300">
                    {item}
                  </span>
               ))}

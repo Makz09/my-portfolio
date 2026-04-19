@@ -2,10 +2,8 @@ import React from 'react';
 import SectionWrapper from '../components/SectionWrapper';
 import { portfolioData } from '../data/portfolioData';
 
-export default function SelectedWorks() {
+export default function SelectedWorks({ onViewArchive }) {
   const { projects } = portfolioData;
-
-  const mockColors = ['bg-[#1e293b]', 'bg-[#0f172a]'];
 
   return (
     <SectionWrapper id="projects">
@@ -16,15 +14,18 @@ export default function SelectedWorks() {
             A curation of robust digital platforms engineered for scale and precise execution.
           </p>
         </div>
-        <a href="#" className="text-sm font-bold tracking-widest text-white hover:text-primary transition-colors flex items-center gap-2 mb-2">
+        <button 
+          onClick={onViewArchive}
+          className="text-sm font-bold tracking-widest text-white hover:text-primary transition-colors flex items-center gap-2 mb-2 uppercase"
+        >
           VIEW ARCHIVE <span>&rarr;</span>
-        </a>
+        </button>
       </div>
 
       <div className="grid md:grid-cols-2 gap-10">
-        {projects.map((project, idx) => (
+        {projects.slice(0, 2).map((project, idx) => (
           <div key={idx} className="group cursor-pointer">
-            <div className={`border border-border rounded-[2rem] p-4 mb-6 overflow-hidden relative aspect-[4/3] flex flex-col justify-end group-hover:border-zinc-500 transition-all shadow-xl ${mockColors[idx % 2]}`}>
+            <div className="bg-white/[0.02] backdrop-blur-xl border border-white/10 rounded-[2rem] p-4 mb-6 overflow-hidden relative aspect-[4/3] flex flex-col justify-end group-hover:border-[#ff2a2a]/50 hover:bg-white/[0.04] transition-all duration-300 shadow-xl group-hover:shadow-[0_0_30px_rgba(255,42,42,0.2)]">
               <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent z-10"></div>
               
               <div className="absolute inset-0 flex items-center justify-center opacity-30 group-hover:scale-105 transition-transform duration-700">
@@ -33,7 +34,7 @@ export default function SelectedWorks() {
               
               <div className="relative z-20 flex flex-wrap gap-3 px-4 pb-4">
                 {project.tags.map((tag, tIdx) => (
-                  <span key={tIdx} className="bg-background/80 backdrop-blur-md border border-border text-xs text-zinc-300 px-4 py-1.5 rounded-full font-medium">
+                  <span key={tIdx} className="bg-white/[0.03] backdrop-blur-md border border-white/10 text-xs text-white px-4 py-1.5 rounded-full font-bold shadow-[0_0_10px_rgba(255,42,42,0.1)] group-hover:bg-[#ff2a2a]/20 group-hover:border-[#ff2a2a]/80 transition-all duration-300">
                     {tag}
                   </span>
                 ))}

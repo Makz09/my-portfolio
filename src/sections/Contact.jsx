@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import SectionWrapper from '../components/SectionWrapper';
 import emailjs from '@emailjs/browser';
-import { Mail, MapPin, User, MessageSquare, Send } from 'lucide-react';
+import { Mail, MapPin, User, MessageSquare, Send, FileText } from 'lucide-react';
 import { FaRunning, FaFutbol, FaPalette, FaMicrophone, FaLinkedin, FaGithub, FaFacebook, FaDiscord, FaArrowUp } from 'react-icons/fa';
 import { MdEmojiPeople } from 'react-icons/md';
 import { Link as ScrollLink } from 'react-scroll';
@@ -69,7 +69,7 @@ export default function Contact() {
         </div>
 
         {/* Right Side: Form */}
-        <div className="bg-[#0f0f11] border border-zinc-800 p-8 md:p-10 rounded-[1.5rem] shadow-2xl relative overflow-hidden group/form">
+        <div className="bg-white/[0.02] backdrop-blur-xl border border-white/10 p-8 md:p-10 rounded-[1.5rem] shadow-2xl relative overflow-hidden group/form">
           <div className="absolute left-0 top-1/4 w-1 h-24 bg-gradient-to-b from-[#ff2a2a]/0 via-[#ff2a2a] to-[#ff2a2a]/0 opacity-70"></div>
           
           <div className="mb-10">
@@ -84,7 +84,7 @@ export default function Contact() {
                 Your Name
               </label>
               <input type="text" name="name" id="name" value={formData.name} onChange={handleChange} required
-                className="w-full bg-[#161618] border border-zinc-800/80 rounded-xl p-4 text-white focus:outline-none focus:border-[#ff2a2a]/60 focus:bg-[#1a1414] transition-all placeholder:text-zinc-600" placeholder="John Doe" />
+                className="w-full bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-xl p-4 text-white focus:outline-none focus:border-[#ff2a2a]/60 focus:bg-[#ff2a2a]/5 transition-all placeholder:text-zinc-600" placeholder="John Doe" />
             </div>
             
             <div className="flex flex-col gap-3">
@@ -93,7 +93,16 @@ export default function Contact() {
                 Your Email
               </label>
               <input type="email" name="email" id="email" value={formData.email} onChange={handleChange} required
-                className="w-full bg-[#161618] border border-zinc-800/80 rounded-xl p-4 text-white focus:outline-none focus:border-[#ff2a2a]/60 focus:bg-[#1a1414] transition-all placeholder:text-zinc-600" placeholder="john@example.com" />
+                className="w-full bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-xl p-4 text-white focus:outline-none focus:border-[#ff2a2a]/60 focus:bg-[#ff2a2a]/5 transition-all placeholder:text-zinc-600" placeholder="john@example.com" />
+            </div>
+
+            <div className="flex flex-col gap-3">
+              <label htmlFor="subject" className="flex items-center gap-2 text-xs font-bold tracking-[0.15em] text-zinc-400 uppercase">
+                <FileText strokeWidth={2.5} className="w-4 h-4 text-[#ff2a2a] drop-shadow-[0_0_8px_rgba(255,42,42,0.8)]" />
+                Subject
+              </label>
+              <input type="text" name="subject" id="subject" value={formData.subject} onChange={handleChange} required
+                className="w-full bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-xl p-4 text-white focus:outline-none focus:border-[#ff2a2a]/60 focus:bg-[#ff2a2a]/5 transition-all placeholder:text-zinc-600" placeholder="Project Inquiry" />
             </div>
 
             <div className="flex flex-col gap-3">
@@ -102,11 +111,11 @@ export default function Contact() {
                 Your Message
               </label>
               <textarea name="message" id="message" rows="4" value={formData.message} onChange={handleChange} required
-                className="w-full bg-[#161618] border border-zinc-800/80 rounded-xl p-4 text-white focus:outline-none focus:border-[#ff2a2a]/60 focus:bg-[#1a1414] transition-all placeholder:text-zinc-600 resize-none" placeholder="Tell me about your project..."></textarea>
+                className="w-full bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-xl p-4 text-white focus:outline-none focus:border-[#ff2a2a]/60 focus:bg-[#ff2a2a]/5 transition-all placeholder:text-zinc-600 resize-none" placeholder="Tell me about your project..."></textarea>
             </div>
 
             <button type="submit" disabled={status === 'sending'} 
-              className="mt-6 w-full relative overflow-hidden bg-zinc-950 border border-zinc-800 hover:border-[#ff2a2a]/80 text-white rounded-xl py-4 flex items-center justify-center gap-3 font-bold tracking-[0.2em] uppercase text-[13px] transition-all duration-300 group hover:-translate-y-1 hover:shadow-[0_10px_30px_-5px_rgba(255,42,42,0.4)] disabled:opacity-50">
+              className="mt-6 w-full relative overflow-hidden bg-white/[0.05] backdrop-blur-md border border-white/10 hover:border-[#ff2a2a]/80 text-white rounded-xl py-4 flex items-center justify-center gap-3 font-bold tracking-[0.2em] uppercase text-[13px] transition-all duration-300 group hover:-translate-y-1 hover:shadow-[0_10px_30px_-5px_rgba(255,42,42,0.4)] disabled:opacity-50">
               
               {/* Button hover glow internal effect */}
               <div className="absolute inset-0 bg-[#ff2a2a] translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300 ease-in-out z-0"></div>

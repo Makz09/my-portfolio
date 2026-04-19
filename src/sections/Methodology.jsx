@@ -23,7 +23,7 @@ export default function Methodology() {
           const Icon = block.icon;
           const mtClass = idx === 1 ? 'md:mt-16' : idx === 2 ? 'md:mt-32' : '';
           return (
-            <div key={idx} className={`bg-[#0d0d0f] border border-zinc-800 rounded-[2rem] p-8 md:p-10 relative overflow-hidden group hover:border-[#ff2a2a]/80 hover:shadow-[0_0_30px_rgba(255,42,42,0.3)] hover:animate-wobble transition-colors duration-300 shadow-lg ${mtClass}`}>
+            <div key={idx} className={`bg-white/[0.02] backdrop-blur-xl border border-white/10 rounded-[2rem] p-8 md:p-10 relative overflow-hidden group hover:border-[#ff2a2a]/50 hover:bg-white/[0.04] hover:shadow-[0_0_30px_rgba(255,42,42,0.2)] hover:animate-wobble transition-all duration-300 shadow-lg ${mtClass}`}>
               <span className="absolute top-2 right-4 text-9xl font-black text-white/[0.02] select-none pointer-events-none group-hover:text-[#ff2a2a]/25 group-hover:drop-shadow-[0_0_20px_rgba(255,42,42,0.8)] transition-all duration-500">{block.num}</span>
               
               <div className="relative z-10">

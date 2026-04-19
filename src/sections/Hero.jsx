@@ -63,7 +63,7 @@ export default function Hero() {
           </div>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white tracking-tighter leading-tight mb-8">
-            Hi! I am . . .<br />
+            Hi! My Name Is<br />
             <span className="text-[#ff2a2a] block mt-1 relative h-[1.2em] w-full overflow-hidden">
               <WordSlider words={words} />
             </span>

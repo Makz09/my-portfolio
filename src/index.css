@@ -5,7 +5,12 @@
 @layer base {
   body {
     @apply bg-background text-zinc-300 antialiased font-sans overflow-x-hidden;
+    cursor: none !important;
   }
+}
+
+a, button, input, textarea, [role="button"] {
+  cursor: none !important;
 }
 
 html {

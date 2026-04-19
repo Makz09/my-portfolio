@@ -38,12 +38,19 @@ export default {
           '25%': { transform: 'translateX(0)', opacity: '1' },
           '75%': { transform: 'translateX(0)', opacity: '1' },
           '100%': { transform: 'translateX(-60px)', opacity: '0' },
+        },
+        bloodDrop: {
+          '0%': { top: '-10%', opacity: '0' },
+          '10%': { opacity: '1' },
+          '90%': { opacity: '1' },
+          '100%': { top: '110%', opacity: '0' },
         }
       },
       animation: {
         vibrate: 'vibrate 0.2s linear infinite',
-        wobble: 'wobble 0.75s ease-in-out infinite',
+        wobble: 'wobble 0.75s ease-in-out 1 forwards',
         'slide-in-right': 'slideInRight 4s ease-in-out forwards',
+        'blood-drop': 'bloodDrop 4s cubic-bezier(0.5, 0, 0.5, 1) infinite',
       }
     },
   },
