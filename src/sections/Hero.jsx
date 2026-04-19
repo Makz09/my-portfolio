@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import SectionWrapper from '../components/SectionWrapper';
-import { FaGithub, FaLinkedin, FaFacebook, FaDiscord } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaFacebook, FaDiscord, FaEye } from 'react-icons/fa';
 import { Link } from 'react-scroll';
 import profilePic from '../assets/my_picture.jpg';
 import TiltWidget from '../components/TiltWidget';
+import ResumeModal from '../components/ResumeModal';
 
 
 
@@ -42,6 +43,7 @@ const WordSlider = ({ words }) => {
 
 export default function Hero() {
   const words = ['Charles', 'Lebeco', 'Donor'];
+  const [isResumeOpen, setIsResumeOpen] = useState(false);
 
   return (
     <SectionWrapper id="home" className="!pt-32 md:!pt-40 overflow-hidden">
@@ -90,10 +92,13 @@ export default function Hero() {
             <Link to="projects" smooth className="group bg-[#ff2a2a] hover:bg-[#ff1a1a] text-white px-8 py-3.5 rounded-full font-bold cursor-pointer transition-all duration-300 flex items-center gap-2 shadow-[0_0_15px_rgba(255,42,42,0.3)] hover:shadow-[0_0_35px_rgba(255,42,42,0.6)] hover:-translate-y-1">
               VIEW PROJECTS <span aria-hidden="true" className="rotate-[-45deg] inline-block group-hover:translate-x-1.5 group-hover:-translate-y-1.5 transition-transform duration-300">&rarr;</span>
             </Link>
-            <a href="/Resume_Charles_Lebeco_Donor.pdf" download className="group bg-[#0d0d0f] border border-zinc-800 hover:border-[#ff2a2a]/80 text-white hover:text-[#ff2a2a] px-8 py-3.5 rounded-full font-bold cursor-pointer transition-all duration-300 flex items-center gap-3 hover:shadow-[0_0_25px_rgba(255,42,42,0.3)] hover:-translate-y-1">
-              <svg className="group-hover:animate-vibrate group-hover:drop-shadow-[0_0_8px_rgba(255,42,42,0.8)] transition-all duration-300" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
-              DOWNLOAD RESUME
-            </a>
+            <button 
+              onClick={() => setIsResumeOpen(true)}
+              className="group bg-[#0d0d0f] border border-zinc-800 hover:border-[#ff2a2a]/80 text-white hover:text-[#ff2a2a] px-8 py-3.5 rounded-full font-bold cursor-pointer transition-all duration-300 flex items-center gap-3 hover:shadow-[0_0_25px_rgba(255,42,42,0.3)] hover:-translate-y-1"
+            >
+              <FaEye className="w-5 h-5 group-hover:animate-vibrate group-hover:drop-shadow-[0_0_8px_rgba(255,42,42,0.8)] transition-all duration-300" />
+              VIEW RESUME
+            </button>
           </div>
         </div>
 
@@ -147,6 +152,8 @@ export default function Hero() {
       </div>
       {/* Enhanced Background visual flair */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150vw] max-w-[1500px] xl:max-w-[2500px] h-[600px] md:h-[800px] xl:h-[1200px] bg-primary/10 rounded-[100%] blur-[120px] md:blur-[200px] -z-10 pointer-events-none mix-blend-screen"></div>
+      {/* Modal */}
+      <ResumeModal isOpen={isResumeOpen} onClose={() => setIsResumeOpen(false)} />
     </SectionWrapper>
   );
 }

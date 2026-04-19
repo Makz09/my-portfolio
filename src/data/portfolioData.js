@@ -96,10 +96,45 @@ export const portfolioData = {
     },
   ],
   education: [
-    { dates: "Batch A.Y. 2025 - On-going", title: "Master in Information and Technology", institution: "Southville International School and Colleges (BF Homes, Las Piñas City)" },
-    { dates: "Batch A.Y. 2022 - 2023", title: "BSIT Specialized in Mobile Application Development", institution: "Southville International School and Colleges (BF Homes, Las Piñas City)" },
-    { dates: "Batch A.Y. 2018 - 2019", title: "Technical Vocational Education Training", institution: "The Sisters of Mary School, Adlas - Inc. (Adlas, Silang, Cavite)" },
-    { dates: "Batch A.Y. 2012 - 2013", title: "Elementary Level", institution: "Genablan Oriental Elementary School (Bicol, Matnog, Sorsogon)" },
+    { 
+      dates: "Batch A.Y. 2025 - On-going", 
+      title: "Master’s Degree", 
+      institution: "", 
+      details: [
+        { type: "bullet", text: "Master of Information Technology" },
+        { type: "bullet", text: "Southville International School and Colleges" },
+        { type: "bullet", text: "@BF Homes, Las Piñas City" }
+      ]
+    },
+    { 
+      dates: "Batch A.Y. 2022 - 2023", 
+      title: "Bachelor’s Degree", 
+      institution: "", 
+      details: [
+        { type: "bullet", text: "Bachelor of Science in Information Technology Specialized in Mobile Application Development" },
+        { type: "bullet", text: "Southville International School and Colleges" },
+        { type: "bullet", text: "@BF Homes, Las Piñas City" }
+      ]
+    },
+    { 
+      dates: "Batch A.Y. 2018 - 2019", 
+      title: "Senior Highschool", 
+      institution: "", 
+      details: [
+        { type: "bullet", text: "Technical Vocational Education Training" },
+        { type: "bullet", text: "The Sisters of Mary School, Adlas - Inc." },
+        { type: "bullet", text: "@Adlas, Silang, Cavite" }
+      ]
+    },
+    { 
+      dates: "Batch A.Y. 2012 - 2013", 
+      title: "Elementary Level", 
+      institution: "", 
+      details: [
+        { type: "bullet", text: "Genablan Oriental Elementary School" },
+        { type: "bullet", text: "@Bicol, Matnog, Sorsogon" }
+      ]
+    },
   ],
   projects: [
     {

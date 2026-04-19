@@ -43,7 +43,7 @@ export default function TimelineItem({ data, align = "left", isLast = false, isE
               <p className="text-sm text-zinc-400 font-medium">{data.company || data.institution}</p>
               
               {data.details && (
-                <div className="grid grid-rows-[0fr] opacity-0 group-hover:grid-rows-[1fr] group-hover:opacity-100 transition-all duration-700 ease-in-out group-hover:mt-4">
+                <div className={`grid ${isEducation ? 'grid-rows-[1fr] opacity-100 mt-4' : 'grid-rows-[0fr] opacity-0 group-hover:grid-rows-[1fr] group-hover:opacity-100'} transition-all duration-700 ease-in-out group-hover:mt-4`}>
                   <div className="overflow-hidden">
                     <ul className="list-disc pl-5 space-y-2 text-zinc-300 text-[13px] md:text-sm">
                       {data.details.map((detail, idx) => (
@@ -98,7 +98,7 @@ export default function TimelineItem({ data, align = "left", isLast = false, isE
             <p className="text-sm text-zinc-400">{data.company || data.institution}</p>
             
             {data.details && (
-                <div className="grid grid-rows-[0fr] opacity-0 group-hover:grid-rows-[1fr] group-hover:opacity-100 transition-all duration-700 ease-in-out group-hover:mt-4">
+                <div className={`grid ${isEducation ? 'grid-rows-[1fr] opacity-100 mt-4' : 'grid-rows-[0fr] opacity-0 group-hover:grid-rows-[1fr] group-hover:opacity-100'} transition-all duration-700 ease-in-out group-hover:mt-4`}>
                   <div className="overflow-hidden">
                     <ul className="list-disc pl-5 space-y-2 text-zinc-300 text-xs sm:text-[13px]">
                       {data.details.map((detail, idx) => (
