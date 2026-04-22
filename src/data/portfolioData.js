@@ -152,7 +152,7 @@ export const portfolioData = {
       tags: ["Laravel", "PHP", "MySQL", "HTML5", "CSS3", "JavaScript", "Tailwind CSS", "Vite"],
       repoUrl: "#",
       liveUrl: "#",
-      images: ["/src/assets/alumni.png"]
+      images: ["/src/assets/arma/arma_01.png", "/src/assets/arma/arma_02.png", "/src/assets/arma/arma_03.png", "/src/assets/arma/arma_04.png", "/src/assets/arma/arma_05.png"]
     },
     {
       title: "Grade Viewing System",
@@ -200,7 +200,7 @@ export const portfolioData = {
       tags: ["C#", "Windows Forms"],
       repoUrl: "#",
       liveUrl: "#",
-      images: ["/src/assets/quiz.png"]
+      images: ["/src/assets/quiz_maker/quiz_maker_01.png", "/src/assets/quiz_maker/quiz_maker_02.png", "/src/assets/quiz_maker/quiz_maker_03.png", "/src/assets/quiz_maker/quiz_maker_04.png"]
     },
     {
       title: "Enigma Machine Application",
@@ -208,7 +208,7 @@ export const portfolioData = {
       tags: ["C#", "Windows Forms"],
       repoUrl: "#",
       liveUrl: "#",
-      images: ["/src/assets/enigma.png"]
+      images: ["/src/assets/enigma_machine/enigma_machine_01.png", "/src/assets/enigma_machine/enigma_machine_02.png", "/src/assets/enigma_machine/enigma_machine_03.png"]
     },
     {
       title: "Biodata Maker Web Application",
