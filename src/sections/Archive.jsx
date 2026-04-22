@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { portfolioData } from '../data/portfolioData';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ExternalLink } from 'lucide-react';
+import { FaGithub, FaCode } from 'react-icons/fa';
+import ProjectSlideshow from '../components/ProjectSlideshow';
 
 export default function Archive({ onBack }) {
   const { projects } = portfolioData;
@@ -49,32 +51,54 @@ export default function Archive({ onBack }) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 + (idx * 0.05) }}
-              className="group"
+              className="group flex flex-col"
             >
-              <div className="bg-white/[0.02] backdrop-blur-xl border border-white/10 rounded-2xl p-6 h-full flex flex-col hover:border-[#ff2a2a]/50 hover:bg-white/[0.04] transition-all duration-300 shadow-lg hover:shadow-[0_0_30px_rgba(255,42,42,0.15)]">
-                <div className="flex justify-between items-start mb-6">
-                  <div className="w-12 h-12 rounded-lg bg-white/[0.03] border border-white/10 flex items-center justify-center font-black text-primary group-hover:bg-[#ff2a2a]/10 group-hover:border-[#ff2a2a]/50 transition-all duration-300">
-                    {project.title.substring(0,2).toUpperCase()}
-                  </div>
-                  <div className="flex flex-wrap gap-2 justify-end max-w-[60%]">
-                    {project.tags.slice(0, 2).map((tag, tIdx) => (
-                      <span key={tIdx} className="text-[10px] uppercase tracking-tighter font-bold text-zinc-500 border border-zinc-800 px-2 py-0.5 rounded">
+              <div className="bg-[#0f0f0f] border border-white/5 rounded-3xl overflow-hidden flex flex-col h-full hover:border-[#ff2a2a]/30 transition-all duration-500 group-hover:translate-y-[-8px]">
+                {/* Top Image Area */}
+                <div className="relative aspect-video overflow-hidden">
+                  {project.images && project.images.length > 0 ? (
+                    <ProjectSlideshow images={project.images} opacity={1} />
+                  ) : (
+                    <div className="w-full h-full bg-zinc-900 flex items-center justify-center text-4xl font-black text-zinc-800">
+                      {project.title.substring(0,2).toUpperCase()}
+                    </div>
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f] to-transparent opacity-60 z-10" />
+                </div>
+
+                {/* Content Area */}
+                <div className="p-8 flex flex-col flex-grow">
+                  <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-[#ff2a2a] transition-colors line-clamp-1">{project.title}</h3>
+                  <p className="text-zinc-400 text-[15px] leading-relaxed mb-6 line-clamp-2">
+                    {project.description}
+                  </p>
+                  
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2 mb-8">
+                    {project.tags.slice(0, 4).map((tag, tIdx) => (
+                      <span key={tIdx} className="text-[10px] font-bold text-zinc-500 uppercase border border-zinc-800 px-3 py-1.5 rounded-lg">
                         {tag}
                       </span>
                     ))}
-                    {project.tags.length > 2 && <span className="text-[10px] font-bold text-primary">+{project.tags.length - 2}</span>}
+                    {project.tags.length > 4 && (
+                      <span className="text-[10px] font-bold text-[#ff2a2a] px-2 py-1.5">
+                        +{project.tags.length - 4}
+                      </span>
+                    )}
                   </div>
-                </div>
 
-                <h3 className="text-xl font-bold text-white mb-4 group-hover:text-[#ff2a2a] transition-colors">{project.title}</h3>
-                <p className="text-zinc-400 text-sm leading-relaxed mb-6 flex-grow">{project.description}</p>
-                
-                <div className="flex flex-wrap gap-2 pt-4 border-t border-white/5">
-                  {project.tags.map((tag, tIdx) => (
-                    <span key={tIdx} className="text-[9px] font-bold text-zinc-500 uppercase">
-                      {tag}
-                    </span>
-                  ))}
+                  {/* Action Buttons */}
+                  <div className="mt-auto flex">
+                    <a 
+                      href={project.repoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl py-3 px-4 flex items-center justify-center gap-2 text-sm font-bold text-white transition-all active:scale-95"
+                    >
+                      <FaCode className="w-4 h-4" />
+                      VIEW SOURCE CODE
+                    </a>
+                  </div>
                 </div>
               </div>
             </motion.div>

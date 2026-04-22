@@ -142,51 +142,89 @@ export const portfolioData = {
       title: "Materials Requisition Management System Web Application",
       description: "A system for managing materials requisition and tracking and monitoring of budgets, used by Southville International School and Colleges.",
       tags: ["React", "Node.js", "MySQL", "Laravel", "PHP", "HTML5", "CSS3", "JavaScript", "Tailwind CSS", "Vite"],
+      repoUrl: "https://github.com/Makz09/MRMS",
+      liveUrl: "#",
+      images: ["/src/assets/MRMS/mrms_01.png", "/src/assets/MRMS/mrms_02.png", "/src/assets/MRMS/mrms_03.png"]
     },
     {
       title: "Alumni Tracking System Web and Mobile Application",
       description: "A streamlined system for managing alumni information and tracking their activities and engagement with the institution, used by the Alumni Office.",
       tags: ["Laravel", "PHP", "MySQL", "HTML5", "CSS3", "JavaScript", "Tailwind CSS", "Vite"],
+      repoUrl: "#",
+      liveUrl: "#",
+      images: ["/src/assets/alumni.png"]
+    },
+    {
+      title: "Grade Viewing System",
+      description: "A streamlined system for viewing grades of students, used by the faculty of Asian SEED Academy of Technology School.",
+      tags: ["Laravel", "PHP", "MySQL", "HTML5", "CSS3", "JavaScript", "Tailwind CSS", "Vite", "React JS"],
+      repoUrl: "https://github.com/Makz09/grade-viewing-system",
+      liveUrl: "#",
+      images: ["/src/assets/gradeviewer.png"]
     },
     {
       title: "Document Management System Web and Mobile Application",
       description: "A web and mobile based application system for managing documents and tracking their status, used by the President's Office of Southville International School and Colleges.",
       tags: ["MySQL", "HTML5", "CSS3", "JavaScript"],
+      repoUrl: "#",
+      liveUrl: "#",
+      images: ["/src/assets/dms.png"]
     },
     {
       title: "Lost and Found System Web and Mobile Application",
       description: "A web and mobile based application system streamlined for lost and found items used by Student Affairs Office of Southville International School and Colleges.",
       tags: ["React Native", "MySQL", "HTML5", "CSS3", "JavaScript"],
+      repoUrl: "#",
+      liveUrl: "#",
+      images: ["/src/assets/lostfound.png"]
     },
     {
       title: "Robinson Commercial Services System Web Application",
       description: "A streamlined system for managing Robinson Commercial Services and tracking their status and movement within the institution.",
       tags: ["React Native", "Firebase"],
+      repoUrl: "#",
+      liveUrl: "#",
+      images: ["/src/assets/robinson.png"]
     },
     {
       title: "PC Parts Picker Web Application",
       description: "A online web based system for managing online purchases of PC parts that are ready for building a customized computer.",
       tags: ["HTML5", "CSS3", "JavaScript"],
+      repoUrl: "#",
+      liveUrl: "#",
+      images: ["/src/assets/pcparts.png"]
     },
     {
       title: "Quiz Maker Application",
       description: "An application system for making quizzes that has a feature of auto-grading and generating multiple quiz reports.",
       tags: ["C#", "Windows Forms"],
+      repoUrl: "#",
+      liveUrl: "#",
+      images: ["/src/assets/quiz.png"]
     },
     {
       title: "Enigma Machine Application",
       description: "A system application design to encrypt and decrypt messages using the Enigma machine algorithm.",
       tags: ["C#", "Windows Forms"],
+      repoUrl: "#",
+      liveUrl: "#",
+      images: ["/src/assets/enigma.png"]
     },
     {
       title: "Biodata Maker Web Application",
       description: "A web based application for making biodatas or resumes.",
       tags: ["PHP", "MySQL", "HTML5", "CSS3"],
+      repoUrl: "#",
+      liveUrl: "#",
+      images: ["/src/assets/biodata.png"]
     },
     {
       title: "Student Management System Application",
       description: "A application system used by teachers to monitor students grades and attendance.",
       tags: ["C#", "MySQL", "Windows Forms"],
+      repoUrl: "#",
+      liveUrl: "#",
+      images: ["/src/assets/studentmgmt.png"]
     }
   ],
   certifications: [
